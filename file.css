@@ -1,0 +1,526 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f8f8f8;
+  font-family: 'Roboto', sans-serif;
+  color: #111;
+  line-height: 1.6;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 48px;
+  background: #111;
+  position: sticky;
+  top: 40px;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* LOGO MAIOR, RESPONSIVA E ESTILOSA */
+.logo {
+  display: flex;
+  align-items: center;
+  height: 100px;
+}
+
+.logo img {
+  height: 100%;
+  width: auto;
+  transition: transform 0.3s ease, filter 0.3s ease;
+
+}
+
+.logo img:hover {
+  transform: scale(1.02);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 32px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  font-family: 'Archivo Black', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.95em;
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  padding: 4px 0;
+  transition: all 0.3s ease;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 2px;
+  width: 0%;
+  background-color: #FFD600;
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #FFD600;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* HERO */
+.hero {
+  height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  animation: fadeUp 1.5s ease forwards;
+}
+
+.hero-content {
+  max-width: 800px;
+  padding: 20px;
+}
+
+.hero-content h1 {
+  font-size: 4em;
+  font-family: 'Archivo Black', sans-serif;
+  color: #111;
+  animation: floatText 3s ease-in-out infinite alternate;
+}
+
+/* FOOTER */
+footer {
+  background-color: #f8f8f8;
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 0.9em;
+  color: #888;
+  border-top: 1px solid #ddd;
+}
+
+.faixa-topo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  z-index: 9999;
+  border-bottom: 2px solid #FFD600;
+}
+
+.faixa-topo .tag {
+  font-size: 0.85em;
+  white-space: nowrap;
+  animation: marquee 12s linear infinite;
+  padding: 8px 16px;
+  margin: 0;
+  border-radius: 0;
+  background-color: transparent;
+  color: #FFD600;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.contato-whatsapp {
+  background-color: #111;
+  color: #fff;
+  padding: 80px 40px;
+  text-align: center;
+  border-top: 3px solid #FFD600;
+  animation: fadeIn 1.5s ease;
+}
+
+.contato-whatsapp h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #FFD600;
+  font-family: 'Archivo Black', sans-serif;
+}
+
+.contato-whatsapp p {
+  font-size: 1.2em;
+  color: #ccc;
+  max-width: 600px;
+  margin: 0 auto 30px auto;
+  line-height: 1.8;
+}
+
+.destaques-zap {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.destaques-zap li {
+  font-size: 1.1em;
+  margin: 10px 0;
+  color: #fff;
+}
+
+/* Botão do WhatsApp estilizado */
+.whatsapp-button {
+  display: inline-block;
+  padding: 16px 40px;
+  background-color: #25D366;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.1em;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.07);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.6);
+}
+
+.produtos {
+  padding: 100px 40px;
+  text-align: center;
+  background-color: #111;
+  color: #fff;
+  animation: fadeIn 1.2s ease;
+}
+
+.produtos h2 {
+  font-size: 2.8em;
+  margin-bottom: 50px;
+  color: #FFD600;
+  font-family: 'Archivo Black', sans-serif;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.produtos-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding-bottom: 40px;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+}
+
+.produto-card {
+  scroll-snap-align: start;
+  background-color: #1a1a1a;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  min-width: 260px;
+  /* Garante que os cards tenham largura mínima */
+}
+
+.produto-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
+}
+
+.produto-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-bottom: 2px solid #FFD600;
+}
+
+.produto-card p {
+  padding: 20px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.1em;
+  letter-spacing: 0.5px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: white;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  z-index: 1000;
+}
+
+.whatsapp-button:hover {
+  background-color: #1ebe57;
+}
+
+.pagina-produto {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: #f4f4f4;
+  color: #222;
+  z-index: 99999;
+  flex-direction: column;
+  padding: 40px 20px;
+  overflow-y: auto;
+  font-family: 'Roboto', sans-serif;
+  animation: fadeIn 0.4s ease;
+}
+
+.voltar-btn {
+  align-self: flex-start;
+  margin-bottom: 20px;
+  background-color: transparent;
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  color: #555;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.voltar-btn:hover {
+  background-color: #e6e6e6;
+  color: #111;
+}
+
+.conteudo-produto {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+@media (min-width: 768px) {
+  .conteudo-produto {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+.galeria {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.galeria img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.miniaturas {
+  display: flex;
+  gap: 12px;
+}
+
+.miniaturas img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.miniaturas img:hover {
+  border-color: #6c63ff;
+}
+
+.detalhes {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.detalhes h2 {
+  font-size: 2.2em;
+  font-family: 'Archivo Black', sans-serif;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.detalhes p {
+  font-size: 1.1em;
+  color: #666;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.info-produto {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 24px;
+}
+
+.info-produto li {
+  font-size: 1em;
+  color: #444;
+  margin: 6px 0;
+}
+
+.info-produto li strong {
+  color: #222;
+  font-weight: 600;
+}
+
+.avaliacao {
+  font-size: 1.1em;
+  color: #6c63ff;
+  margin-top: 12px;
+}
+
+.preco-promocional {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.preco-promocional .preco-antigo {
+  text-decoration: line-through;
+  color: #999;
+  margin-right: 12px;
+  font-size: 1em;
+}
+
+.preco-promocional .preco-novo {
+  color: #27ae60;
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+.comprar-btn-link {
+  display: inline-block;
+  background-color: #276b24;
+  padding: 16px 32px;
+  font-weight: bold;
+  color: #fff;
+  font-size: 1.1em;
+  border-radius: 32px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  max-width: 240px;
+  text-align: center;
+}
+
+.comprar-btn-link:hover {
+  background-color: #19ca0f;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 24px;
+    gap: 16px;
+  }
+
+  .logo {
+    height: 70px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.4em;
+  }
+
+  .produtos {
+    padding: 60px 20px;
+  }
+
+  .produtos h2 {
+    font-size: 2em;
+  }
+
+  .produto-card {
+    min-width: 200px;
+  }
+
+  .pagina-produto {
+    padding: 20px 12px;
+  }
+
+  .conteudo-produto {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .detalhes h2 {
+    font-size: 1.8em;
+  }
+
+  .detalhes p,
+  .info-produto li {
+    font-size: 1em;
+  }
+
+  .miniaturas img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .comprar-btn-link {
+    width: 100%;
+    max-width: 100%;
+    font-size: 1em;
+    padding: 14px 20px;
+  }
+
+  .voltar-btn {
+    font-size: 0.9em;
+    padding: 8px 16px;
+  }
+
+  .faixa-topo .tag {
+    font-size: 0.75em;
+  }
+}
